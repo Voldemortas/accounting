@@ -1,19 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <EditableTable v-bind:data="data" :method="updateTable" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EditableTable from "./components/EditableTable.vue";
+
+const TAX = 0.21;
+
+if (!localStorage.getItem("products")) {
+  const defaultData = [
+    { code: "477", name: "Jeans", base: 15, tax: TAX },
+    { code: "478", name: "Belt", base: 6, tax: TAX },
+  ];
+  localStorage.setItem("products", JSON.stringify(defaultData));
+}
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    EditableTable,
+  },
+  data() {
+    return { data: JSON.parse(localStorage.getItem("products")) };
+  },
+  methods: {
+    updateTable(event, key, value) {
+      console.log(event, key, value, this.data[key]);
+      if (event === "remove") {
+        this.data.splice(key, 1);
+      }
+      if (event === "update") {
+        this.data.splice(key, 1, { ...value, tax: TAX });
+      }
+    },
+  },
+  watch: {
+    data: function () {
+      console.log("update");
+      window.localStorage.setItem("products", JSON.stringify(this.data));
+    },
+  },
+};
 </script>
 
 <style>
