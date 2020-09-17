@@ -1,12 +1,17 @@
 <template>
   <tr v-if="!edit">
-    <td>{{code}}</td>
-    <td>{{name}}</td>
-    <td>{{base.toFixed(2)}}</td>
-    <td>{{(base * (1 + tax)).toFixed(2)}}</td>
-    <td v-on:click="() => {
-        edit = !edit
-      }" class="td-small">
+    <td>{{ code }}</td>
+    <td>{{ name }}</td>
+    <td>{{ base.toFixed(2) }}</td>
+    <td>{{ (base * (1 + tax)).toFixed(2) }}</td>
+    <td
+      v-on:click="
+        () => {
+          edit = !edit
+        }
+      "
+      class="td-small padLeft"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -108,7 +113,7 @@
         v-on:keyup="changeTotal"
       />
     </td>
-    <td v-on:click="save" class="td-small">
+    <td v-on:click="save" class="td-small padLeft">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -185,7 +190,7 @@
 
 <script>
 export default {
-  name: "EditableRow",
+  name: 'EditableRow',
   props: {
     code: String,
     name: String,
@@ -199,52 +204,35 @@ export default {
       edit: false,
       newBase: this.base.toFixed(2),
       newTotal: (this.base * (1 + this.tax)).toFixed(2),
-      newCode: this.code + "",
-      newName: this.name + "",
-    };
+      newCode: this.code + '',
+      newName: this.name + '',
+    }
   },
   methods: {
     changeBase(e) {
-      this.newTotal = (e.target.value * (1 + this.tax)).toFixed(2);
+      this.newTotal = (e.target.value * (1 + this.tax)).toFixed(2)
     },
     changeTotal(e) {
-      this.newBase = (e.target.value / (1 + this.tax)).toFixed(2);
+      this.newBase = (e.target.value / (1 + this.tax)).toFixed(2)
     },
     cancel() {
-      this.newBase = this.base.toFixed(2);
-      this.newTotal = (this.base * (1 + this.tax)).toFixed(2);
-      this.newCode = this.code + "";
-      this.newName = this.name + "";
-      this.edit = !this.edit;
+      this.newBase = this.base.toFixed(2)
+      this.newTotal = (this.base * (1 + this.tax)).toFixed(2)
+      this.newCode = this.code + ''
+      this.newName = this.name + ''
+      this.edit = !this.edit
     },
     save() {
       let newValue = {
         code: this.newCode,
         name: this.newName,
         base: this.newBase * 1,
-      };
-      this.edit = !this.method("update", this.index, newValue);
+      }
+      this.edit = !this.method('update', this.index, newValue)
     },
     remove() {
-      this.method("remove", this.index);
+      this.method('remove', this.index)
     },
   },
-};
+}
 </script>
-
-<style scoped>
-input {
-  width: 100%;
-  text-align: center;
-}
-td {
-  width: 100px;
-}
-.td-small {
-  width: 10px;
-  border-width: 0;
-}
-svg {
-  cursor: pointer;
-}
-</style>

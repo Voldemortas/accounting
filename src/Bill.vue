@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <PreviewTable v-bind:data="data" />
-    <a v-bind:href="`${path}/`">a</a>
+    <main class="main">
+      <PreviewTable v-bind:data="data" /><br />
+      <div class="right">
+        <a v-bind:href="`${path}/`">Back</a>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -21,14 +25,3 @@ export default {
   },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

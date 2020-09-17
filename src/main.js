@@ -4,6 +4,7 @@ import App from './App.vue'
 import NotFound from './NotFound.vue'
 import Bill from './Bill.vue'
 import { publicPath } from '../vue.config'
+import './assets/style.scss'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)

@@ -18,20 +18,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-input {
-  width: 100%;
-  text-align: center;
-}
-td {
-  width: 100px;
-}
-.td-small {
-  width: 10px;
-  border-width: 0;
-}
-svg {
-  cursor: pointer;
-}
-</style>

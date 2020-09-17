@@ -43,26 +43,3 @@ export default {
   components: { PreviewRow },
 }
 </script>
-
-<style scoped>
-tbody {
-  display: block;
-  max-height: 400px;
-  overflow: auto;
-  width: 100%;
-}
-thead,
-tfoot {
-  display: block;
-}
-th {
-  min-width: 100px;
-}
-table {
-  border-width: 1px;
-  border-style: solid;
-  border-color: black;
-  border-radius: 5px;
-  padding: 15px 0;
-}
-</style>

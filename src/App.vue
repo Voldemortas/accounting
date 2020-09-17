@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <EditableTable v-bind:data="data" :method="updateTable" />
-    <a v-bind:href="`${path}/bill`">Get Bill</a>
+    <main class="main">
+      <EditableTable v-bind:data="data" :method="updateTable" />
+      <div class="right">
+        <a v-bind:href="`${path}/bill`">Get Bill</a>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -54,14 +58,3 @@ export default {
   },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

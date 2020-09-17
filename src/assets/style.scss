@@ -1,0 +1,60 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+input {
+  width: 100%;
+  text-align: center;
+}
+svg {
+  cursor: pointer;
+}
+
+tbody {
+  display: block;
+  max-height: 400px;
+  overflow: auto;
+  width: 100%;
+}
+td {
+  width: 100px;
+}
+thead,
+tfoot {
+  display: block;
+}
+th {
+  min-width: 100px;
+}
+table {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  padding: 15px 0;
+  display: inline-table;
+}
+
+.td-small {
+  width: 25px;
+  border-width: 0;
+}
+
+.padLeft {
+  padding-left: 20px;
+}
+
+.right {
+  padding-top: 20px;
+  text-align: right;
+}
+
+.main {
+  width: 500px;
+  display: inline-block;
+}

@@ -28,7 +28,7 @@
         v-on:keyup="changeTotal"
       />
     </td>
-    <td v-on:click="add" class="td-small">
+    <td v-on:click="add" class="td-small padLeft">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -64,7 +64,7 @@
         </g>
       </svg>
     </td>
-    <td v-on:click="cancel" class="td-small">
+    <td class="td-small" style="display: inherit" v-on:click="cancel">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -105,7 +105,7 @@
 
 <script>
 export default {
-  name: "NewRow",
+  name: 'NewRow',
   props: {
     method: Function,
     tax: Number,
@@ -114,48 +114,31 @@ export default {
     return {
       newBase: 0,
       newTotal: 0,
-      newCode: "",
-      newName: "",
-    };
+      newCode: '',
+      newName: '',
+    }
   },
   methods: {
     changeBase(e) {
-      this.newTotal = (e.target.value * (1 + this.tax)).toFixed(2);
+      this.newTotal = (e.target.value * (1 + this.tax)).toFixed(2)
     },
     changeTotal(e) {
-      this.newBase = (e.target.value / (1 + this.tax)).toFixed(2);
+      this.newBase = (e.target.value / (1 + this.tax)).toFixed(2)
     },
     cancel() {
-      this.newBase = 0;
-      this.newTotal = 0;
-      this.newCode = "";
-      this.newName = "";
+      this.newBase = 0
+      this.newTotal = 0
+      this.newCode = ''
+      this.newName = ''
     },
     add() {
       let newValue = {
         code: this.newCode,
         name: this.newName,
         base: this.newBase * 1,
-      };
-      if (this.method("add", 0, newValue)) this.cancel();
+      }
+      if (this.method('add', 0, newValue)) this.cancel()
     },
   },
-};
+}
 </script>
-
-<style scoped>
-input {
-  width: 100%;
-  text-align: center;
-}
-td {
-  width: 100px;
-}
-.td-small {
-  max-width: 10px;
-  border-width: 0;
-}
-svg {
-  cursor: pointer;
-}
-</style>
