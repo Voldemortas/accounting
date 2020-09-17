@@ -27,18 +27,24 @@ export default {
   },
   methods: {
     updateTable(event, key, value) {
-      console.log(event, key, value, this.data[key]);
       if (event === "remove") {
         this.data.splice(key, 1);
+        return true;
+      }
+      if (value.name === "" || value.code === "" || value.base <= 0) {
+        return false;
       }
       if (event === "update") {
         this.data.splice(key, 1, { ...value, tax: TAX });
       }
+      if (event === "add") {
+        this.data.push({ ...value, tax: TAX });
+      }
+      return true;
     },
   },
   watch: {
     data: function () {
-      console.log("update");
       window.localStorage.setItem("products", JSON.stringify(this.data));
     },
   },

@@ -16,6 +16,7 @@
         viewBox="0 0 172 172"
         style=" fill:#000000;"
       >
+        <title>edit</title>
         <g
           fill="none"
           fill-rule="nonzero"
@@ -51,6 +52,7 @@
         viewBox="0 0 172 172"
         style=" fill:#000000;"
       >
+        <title>remove</title>
         <g
           fill="none"
           fill-rule="nonzero"
@@ -116,6 +118,7 @@
         viewBox="0 0 172 172"
         style=" fill:#000000;"
       >
+        <title>save</title>
         <g
           fill="none"
           fill-rule="nonzero"
@@ -151,6 +154,7 @@
         viewBox="0 0 172 172"
         style=" fill:#000000;"
       >
+        <title>cancel</title>
         <g
           fill="none"
           fill-rule="nonzero"
@@ -214,20 +218,16 @@ export default {
       this.edit = !this.edit;
     },
     save() {
-      this.edit = !this.edit;
       let newValue = {
         code: this.newCode,
         name: this.newName,
         base: this.newBase * 1,
       };
-      this.method("update", this.index, newValue);
+      this.edit = !this.method("update", this.index, newValue);
     },
     remove() {
       this.method("remove", this.index);
     },
-  },
-  computed: {
-    console: () => console,
   },
 };
 </script>
@@ -242,6 +242,7 @@ td {
 }
 .td-small {
   width: 10px;
+  border-width: 0;
 }
 svg {
   cursor: pointer;
