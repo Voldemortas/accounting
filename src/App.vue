@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <EditableTable v-bind:data="data" :method="updateTable" />
+    <a v-bind:href="`${path}/bill`">Get Bill</a>
   </div>
 </template>
 
@@ -21,6 +22,9 @@ export default {
   name: 'App',
   components: {
     EditableTable,
+  },
+  props: {
+    path: String,
   },
   data() {
     return { data: JSON.parse(localStorage.getItem('products')) }
