@@ -1,5 +1,5 @@
 <template>
-  <tr>
+  <tr class="background-default">
     <td>{{ code }}</td>
     <td>{{ name }}</td>
     <td>{{ base.toFixed(2) }}</td>

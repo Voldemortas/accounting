@@ -6,10 +6,10 @@
         <th>Name</th>
         <th>Base Price</th>
         <th>Price + VAT</th>
-        <th colspan="2" style="min-width: 20px" class="padLeft">Actions</th>
+        <th colspan="2" style="min-width: 20px" class="pad-left">Actions</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="scrollable">
       <template v-for="(item, index) in data">
         <EditableRow
           v-bind="item"
@@ -31,7 +31,7 @@
             .toFixed(2)
         }}
       </th>
-      <th colspan="2"></th>
+      <th colspan="2" style="min-width: 0"></th>
     </tfoot>
   </table>
 </template>

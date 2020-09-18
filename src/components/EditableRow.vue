@@ -10,7 +10,7 @@
           edit = !edit
         }
       "
-      class="td-small padLeft"
+      class="td--small pad-left"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@
         </g>
       </svg>
     </td>
-    <td v-on:click="remove" class="td-small">
+    <td v-on:click="remove" class="td--small">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -113,7 +113,7 @@
         v-on:keyup="changeTotal"
       />
     </td>
-    <td v-on:click="save" class="td-small padLeft">
+    <td v-on:click="save" class="td--small pad-left">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -149,7 +149,7 @@
         </g>
       </svg>
     </td>
-    <td v-on:click="cancel" class="td-small">
+    <td v-on:click="cancel" class="td--small">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"

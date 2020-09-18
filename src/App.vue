@@ -3,7 +3,7 @@
     <main class="main">
       <EditableTable v-bind:data="data" :method="updateTable" />
       <div class="right">
-        <a v-bind:href="`${path}/bill`">Get Bill</a>
+        <a v-bind:href="`${path}/bill`">Get a Bill</a>
       </div>
     </main>
   </div>
@@ -16,8 +16,13 @@ const TAX = 0.21
 
 if (!localStorage.getItem('products')) {
   const defaultData = [
-    { code: '477', name: 'Jeans', base: 15, tax: TAX },
-    { code: '478', name: 'Belt', base: 6, tax: TAX },
+    { code: '47764a23', name: 'Jeans', base: 15, tax: TAX },
+    { code: '47714543', name: 'Belt', base: 6, tax: TAX },
+    { code: '47612022', name: 'Black Shirt', base: 20, tax: TAX },
+    { code: '47612023', name: 'White Shirt', base: 20, tax: TAX },
+    { code: '47612024', name: 'Red Shirt', base: 20, tax: TAX },
+    { code: '47612025', name: 'Green Shirt', base: 20, tax: TAX },
+    { code: '47612026', name: 'Blue shirt', base: 20, tax: TAX },
   ]
   localStorage.setItem('products', JSON.stringify(defaultData))
 }

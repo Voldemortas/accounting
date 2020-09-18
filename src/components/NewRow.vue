@@ -28,7 +28,7 @@
         v-on:keyup="changeTotal"
       />
     </td>
-    <td v-on:click="add" class="td-small padLeft">
+    <td v-on:click="add" class="td--small pad-left">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -64,7 +64,7 @@
         </g>
       </svg>
     </td>
-    <td class="td-small" style="display: inherit" v-on:click="cancel">
+    <td class="td--small" style="display: inherit" v-on:click="cancel">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"

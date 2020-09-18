@@ -3,7 +3,7 @@
     <main class="main">
       <PreviewTable v-bind:data="data" /><br />
       <div class="right">
-        <a v-bind:href="`${path}/`">Back</a>
+        <a v-bind:href="`${path}/`">Go Back</a>
       </div>
     </main>
   </div>

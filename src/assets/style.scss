@@ -1,3 +1,9 @@
+$colour-1: #fff;
+$colour-2: #d6d6d6;
+$colour-3: #ebebeb;
+$colour-4: #32a852;
+$colour-5: #1ddb50;
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -7,45 +13,7 @@
   margin-top: 60px;
 }
 
-input {
-  width: 100%;
-  text-align: center;
-}
-svg {
-  cursor: pointer;
-}
-
-tbody {
-  display: block;
-  max-height: 400px;
-  overflow: auto;
-  width: 100%;
-}
-td {
-  width: 100px;
-}
-thead,
-tfoot {
-  display: block;
-}
-th {
-  min-width: 100px;
-}
-table {
-  border-width: 1px;
-  border-style: solid;
-  border-color: black;
-  border-radius: 5px;
-  padding: 15px 0;
-  display: inline-table;
-}
-
-.td-small {
-  width: 25px;
-  border-width: 0;
-}
-
-.padLeft {
+.pad-left {
   padding-left: 20px;
 }
 
@@ -54,7 +22,75 @@ table {
   text-align: right;
 }
 
+.background-default {
+  background-color: $colour-1 !important;
+}
+
 .main {
   width: 500px;
   display: inline-block;
+
+  a {
+    color: $colour-4;
+  }
+  a:hover {
+    color: $colour-5;
+  }
+  a:active {
+    text-decoration: none;
+  }
+
+  .td--small {
+    width: 25px;
+    border-width: 0;
+  }
+  table {
+    border-width: 1px;
+    border-style: solid;
+    border-color: $colour-4;
+    border-radius: 5px;
+    padding: 15px 0;
+    display: inline-table;
+    border-spacing: 0 1px;
+    padding: 20px;
+
+    input {
+      width: 100%;
+      text-align: center;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+
+    .scrollable {
+      max-height: 400px;
+      overflow: auto;
+      width: calc(100% + 1em);
+    }
+
+    tbody {
+      display: block;
+      width: 100%;
+
+      tr {
+        background-color: $colour-2;
+      }
+      tr:nth-child(odd) {
+        background-color: $colour-3;
+      }
+    }
+
+    td {
+      width: 100px;
+      border-width: inherit 0;
+    }
+    thead,
+    tfoot {
+      display: block;
+    }
+    th {
+      min-width: 100px;
+    }
+  }
 }
