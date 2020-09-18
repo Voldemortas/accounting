@@ -2,9 +2,7 @@
   <div id="app">
     <main class="main">
       <PreviewTable v-bind:data="data" /><br />
-      <div class="right">
-        <a v-bind:href="`${path}/`">Go Back</a>
-      </div>
+      <a v-bind:href="`${path}/`">Go Back</a>
     </main>
   </div>
 </template>

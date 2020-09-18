@@ -231,7 +231,9 @@ export default {
       this.edit = !this.method('update', this.index, newValue)
     },
     remove() {
-      this.method('remove', this.index)
+      if (confirm('Are you sure you want to delete this?')) {
+        this.method('remove', this.index)
+      }
     },
   },
 }

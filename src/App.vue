@@ -2,9 +2,14 @@
   <div id="app">
     <main class="main">
       <EditableTable v-bind:data="data" :method="updateTable" />
-      <div class="right">
-        <a v-bind:href="`${path}/bill`">Get a Bill</a>
+      <div
+        v-bind:class="
+          `${success === null ? '' : success ? 'success' : 'failure'}`
+        "
+      >
+        {{ message }}
       </div>
+      <a v-bind:href="`${path}/bill`">Get a Bill</a>
     </main>
   </div>
 </template>
@@ -36,22 +41,39 @@ export default {
     path: String,
   },
   data() {
-    return { data: JSON.parse(localStorage.getItem('products')) }
+    return {
+      data: JSON.parse(localStorage.getItem('products')),
+      message: '',
+      success: null,
+    }
   },
   methods: {
     updateTable(event, key, value) {
       if (event === 'remove') {
         this.data.splice(key, 1)
+        this.success = true
+        this.message = 'The product was removed'
         return true
       }
       if (value.name === '' || value.code === '' || value.base <= 0) {
+        this.success = false
+        this.message =
+          value.code === ''
+            ? "The product code can't be empty!"
+            : value.name === ''
+            ? "The product name can't be empty!"
+            : 'The price must be above zero!'
         return false
       }
       if (event === 'update') {
         this.data.splice(key, 1, { ...value, tax: TAX })
+        this.success = true
+        this.message = 'The product was updated'
       }
       if (event === 'add') {
         this.data.push({ ...value, tax: TAX })
+        this.success = true
+        this.message = 'The new product was added'
       }
       return true
     },

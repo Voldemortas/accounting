@@ -3,6 +3,7 @@ $colour-2: #d6d6d6;
 $colour-3: #ebebeb;
 $colour-4: #32a852;
 $colour-5: #1ddb50;
+$colour-6: #eb4034;
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -17,13 +18,18 @@ $colour-5: #1ddb50;
   padding-left: 20px;
 }
 
-.right {
-  padding-top: 20px;
-  text-align: right;
-}
-
 .background-default {
   background-color: $colour-1 !important;
+}
+
+.success {
+  color: $colour-5;
+  padding-bottom: 5px;
+}
+
+.failure {
+  color: $colour-6;
+  padding-bottom: 5px;
 }
 
 .main {
@@ -53,6 +59,7 @@ $colour-5: #1ddb50;
     display: inline-table;
     border-spacing: 0 1px;
     padding: 20px;
+    margin: 5px;
 
     input {
       width: 100%;
