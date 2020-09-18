@@ -1,4 +1,4 @@
-# Xplicty Assignment
+# Xplicity Assignment
 
 ## Live Demo
 
