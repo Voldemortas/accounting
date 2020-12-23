@@ -9,7 +9,7 @@
       >
         {{ message }}
       </div>
-      <a v-bind:href="`${path}/bill`">Get a Bill</a>
+      <a v-bind:href="`${path}/bill`">Get the Bill</a>
     </main>
   </div>
 </template>
