@@ -2,4 +2,4 @@
 
 ## Live Demo
 
-http://andriaus.lt:40001
+https://xplcity.andriaus.lt
