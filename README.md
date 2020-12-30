@@ -2,4 +2,4 @@
 
 ## Live Demo
 
-https://xplcity.andriaus.lt
+https://accounting.andriaus.lt
