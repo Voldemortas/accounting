@@ -24,14 +24,13 @@ export default {
   },
   methods: {
     getPDF(){
-      const prev = document.getElementsByTagName('html')[0].innerHTML.toString()
-      document.body.innerHTML+='<div style="position: absolute; top: 500px; left: calc(50% - 34px)">andriaus.lt</div>'
-      html2pdf(        
+      html2pdf(
         document.getElementsByTagName('html')[0].innerHTML.toString().replaceAll(/<a href="\/">Go Back<\/a>\s*\n*<a href="#">Get PDF<\/a>/g, ''),
         {
-          filename: 'receipt.pdf',}
+          filename: 'receipt.pdf',                  
+          html2canvas:  { scale: 4 }
+        }
       )
-      document.body.innerHTML = prev
     }
   }
 }
